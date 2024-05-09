@@ -4,11 +4,14 @@ import '@fontsource/poppins';
 
 const theme = extendTheme({
     colors: {
-        primary: {
-            100: "#299D91",
-        },
+        primary: "#299D91",
+        text: "#191D23",
+        gray: {
+            2: "#878787",
+            4: "#D1D1D1"
+        }
     },
-    fonts:{
+    fonts: {
         inter: `'Inter Variable', sans-serif`,
         poppins: `'Poppins', sans-serif`,
     }
