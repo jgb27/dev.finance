@@ -3,19 +3,24 @@ import {
     FormLabel,
     FormErrorMessage,
     FormHelperText,
-    Input
+    Input,
+    HStack,
+    Link,
+    VStack,
+    Flex
 } from '@chakra-ui/react'
 
 import { useState } from 'react'
 
 interface Form {
-    type: string,
+    login: boolean,
 
 }
 
-const Forms = () => {
+const Forms = ({ login }: Form) => {
 
     const [formData, setFormData] = useState({
+        name: '',
         email: '',
         password: ''
     });
@@ -29,22 +34,44 @@ const Forms = () => {
     };
 
     return (
-        <FormControl>
-            <FormLabel>Email</FormLabel>
-            <Input
-                type='email'
-                name='email'
-                value={formData.email}
-                onChange={handleInputChange}
-            />
+        <FormControl >
+            <Flex gap={6} justify='flex-start' direction='column'>
+                {!login ?
+                    <Flex direction='column'>
+                        <FormLabel>Name</FormLabel>
+                        <Input
+                            type='text'
+                            name='name'
+                            value={formData.name}
+                            onChange={handleInputChange}
+                        />
+                    </Flex>
+                    : <></>
+                }
+                
+                <Flex direction='column'>
+                    <FormLabel>Email</FormLabel>
+                    <Input
+                        type='email'
+                        name='email'
+                        value={formData.email}
+                        onChange={handleInputChange}
+                    />
+                </Flex>
 
-            <FormLabel>Password</FormLabel>
-            <Input
-                type='password'
-                name='password'
-                value={formData.password}
-                onChange={handleInputChange}
-            />
+                <Flex direction='column'>
+                    <HStack justify='space-between'>
+                        <FormLabel>Password</FormLabel>
+                        {login ? <Link color="primary.100">Forgot Password?</Link> : <></>}
+                    </HStack>
+                    <Input
+                        type='password'
+                        name='password'
+                        value={formData.password}
+                        onChange={handleInputChange}
+                    />
+                </Flex>
+            </Flex>
         </FormControl>
     )
 }

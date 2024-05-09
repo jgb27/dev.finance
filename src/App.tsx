@@ -6,7 +6,7 @@ export const App = () => {
   return (
     <Container maxW='md'>
       <Title color="primary.100" font="4xl" fontFamily="poppins" />
-      <Forms />
+      <Forms login={true} />
     </Container>
   )
 }
