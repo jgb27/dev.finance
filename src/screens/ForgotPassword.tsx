@@ -1,4 +1,4 @@
-import { Container, Flex, FormControl, Text } from "@chakra-ui/react";
+import { Container, Flex, FormControl, Text, useColorModeValue } from "@chakra-ui/react";
 import Title from "../components/Title";
 import FormInput from "../components/FormInput";
 import ButtonSubmit from "../components/ButtonSubmit";
@@ -26,7 +26,7 @@ const ForgotPassword = () => {
                 <Flex direction='column' gap={8}>
                     <Title color="primary" font="4xl" fontFamily="poppins" />
                     <Flex gap={4} direction='column'>
-                        <Text fontFamily="inter" fontSize="24px" fontWeight="600" align='center' color="text">
+                        <Text fontFamily="inter" fontSize="24px" fontWeight="600" align='center' color={useColorModeValue("text", "white")}>
                             Forgot Password
                         </Text>
                         <Text fontFamily="poppins" fontSize="16px" fontWeight="300" align='center' color="newGray.200">
