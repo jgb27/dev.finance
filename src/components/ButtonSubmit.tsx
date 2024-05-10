@@ -19,6 +19,9 @@ const ButtonSubmit = ({ icon, color, bg, text, loadingText, onSubmit }: Button) 
             onClick={onSubmit}
             w="full"
             loadingText={loadingText}
+            _hover={{
+                opacity: 0.8,
+            }}
         >
             {text}
         </Button >

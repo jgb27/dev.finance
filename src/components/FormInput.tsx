@@ -1,4 +1,5 @@
 import { Flex, FormLabel, HStack, Input, Link } from '@chakra-ui/react'
+import { Link as ReactRouterLink } from 'react-router-dom';
 
 interface IFormData {
     [key: string]: string;
@@ -20,7 +21,7 @@ const FormInput = ({ font, formData, onChange, name, type, login }: IFormInput) 
                 <FormLabel fontWeight="500" fontFamily={font}>
                     {name[0].toUpperCase() + name.substring(1)}
                 </FormLabel>
-                {login ? <Link color="primary">Forgot Password?</Link> : <></>}
+                {login ? <Link as={ReactRouterLink} to='/forgotPassword' color="primary">Forgot Password?</Link> : <></>}
             </HStack>
             <Input
                 type={type}
