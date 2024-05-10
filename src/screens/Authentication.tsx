@@ -46,7 +46,7 @@ const Authentication = () => {
   };
 
   return (
-    <Container maxW='md' boxShadow={'lg'} padding={12} mt={22}>
+    <Container maxW='md' boxShadow={'lg'} padding={6} mt={22}>
       <Flex direction='column' gap={8}>
         <Title color="primary" font="4xl" fontFamily="poppins" />
         <FormControl >
@@ -90,9 +90,9 @@ const Authentication = () => {
                     Keep me signed in
                   </Checkbox> :
 
-                  <Flex gap={1}>
+                  <Flex gap={1} >
                     <Text fontFamily={font} color="text">By continuing, you agree to our</Text>
-                    <Link color="primary">terms of service.</Link>
+                    <Link fontFamily={font} color="primary">terms of service.</Link>
                   </Flex>
               }
               <ButtonSubmit
@@ -100,11 +100,7 @@ const Authentication = () => {
                 bg='primary'
                 color='white'
                 text={login ? "Login" : "Register"}
-                onSubmit={() => {
-                  console.log(formData)
-                  console.log(keepLogin)
-                  navigate("/home")
-                }}
+                onSubmit={() => navigate("/home")}
               />
             </Flex>
 
@@ -144,24 +140,24 @@ const Authentication = () => {
 
 const Diviser = ({ font, text }: diviser) => {
   return (
-      <Flex
-          align={'center'}
-          _before={{
-              content: '""',
-              borderBottom: '1px solid',
-              borderColor: "primary",
-              flexGrow: 1,
-              mr: 8,
-          }}
-          _after={{
-              content: '""',
-              borderBottom: '1px solid',
-              borderColor: "primary",
-              flexGrow: 1,
-              ml: 8,
-          }}>
-          <Text fontWeight="400" fontFamily={font}>{text}</Text>
-      </Flex>
+    <Flex
+      align={'center'}
+      _before={{
+        content: '""',
+        borderBottom: '1px solid',
+        borderColor: "primary",
+        flexGrow: 1,
+        mr: 8,
+      }}
+      _after={{
+        content: '""',
+        borderBottom: '1px solid',
+        borderColor: "primary",
+        flexGrow: 1,
+        ml: 8,
+      }}>
+      <Text fontWeight="400" fontFamily={font}>{text}</Text>
+    </Flex>
   )
 }
 
