@@ -1,30 +1,27 @@
-# React + TypeScript + Vite
+# Dev Finance
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+O nome e a ideia vinheram de um antigo projeto feito ao longo de um curso rápido da rocketseat, onde o projeto era de um controle financeiro, onde o usuário poderia adicionar e remover transações, e o sistema mostrava o saldo final.
 
-Currently, two official plugins are available:
+## Funcionalidades
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Gastos e ganhos
+- Graficos de gastos e ganhos
 
-## Expanding the ESLint configuration
+## Instalação
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+1. Clone o repositório
+2. Execute o comando `npm install` para instalar as dependências
 
-- Configure the top-level `parserOptions` property like this:
+## Uso
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
+1. Execute o comando `npm start` para iniciar o projeto
+2. Acesse o projeto em `http://localhost:3000`
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+## Contribuição
+
+1. Faça um fork do repositório
+2. Crie uma branch para sua contribuição (`git checkout -b feature/nova-funcionalidade`)
+3. Faça as alterações necessárias
+4. Faça o commit das suas alterações (`git commit -m 'Adiciona nova funcionalidade'`)
+5. Faça o push para o repositório remoto (`git push origin feature/nova-funcionalidade`)
+6. Abra um pull request
