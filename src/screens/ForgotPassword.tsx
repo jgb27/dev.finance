@@ -27,7 +27,7 @@ const ForgotPassword = () => {
                     <Text fontFamily="inter" fontSize="24px" fontWeight="600" align='center' color="text">
                         Forgot Password
                     </Text>
-                    <Text fontFamily="poppins" fontSize="16px" fontWeight="300" align='center' color="gray.2">
+                    <Text fontFamily="poppins" fontSize="16px" fontWeight="300" align='center' color="newGray.200">
                         Enter you email address to get the password reset link.
                     </Text>
                     <FormControl>
@@ -51,7 +51,7 @@ const ForgotPassword = () => {
                                 />
                                 <ButtonSubmit
                                     bg="white"
-                                    color="gray.2"
+                                    color="newGray.200"
                                     text="Back to login"
                                     onSubmit={() => navigate('/authentication')}
                                 />
