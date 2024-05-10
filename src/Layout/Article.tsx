@@ -1,5 +1,7 @@
+import { Box } from '@chakra-ui/react';
 import { motion } from 'framer-motion'
 import { useEffect } from 'react';
+import ThemeToggleButton from '../components/ThemeToggleButton';
 
 interface LayoutProps {
     children: React.ReactNode
@@ -9,12 +11,12 @@ interface LayoutProps {
 const variants = {
     hidden: { opacity: 0, y: 20 },
     enter: { opacity: 1, y: 0 },
-    exit: { opacity: 0, y: 20 } // Corrigido o valor de x e removido x: -0
+    exit: { opacity: 0, y: 20 }
 }
 
 const Layout = ({ children, title }: LayoutProps) => {
-    const t = title ? `${title} - Dev.Finance` : "Dev.Finance"; // Use de forma segura o título
-    
+    const t = title ? `${title} - Dev.Finance` : "Dev.Finance";
+
     useEffect(() => {
         if (title) {
             document.title = t;
@@ -37,6 +39,13 @@ const Layout = ({ children, title }: LayoutProps) => {
                         <meta property="og:title" content={t} />
                     </>
                 )}
+                <Box
+                    position="absolute"
+                    right={5}
+                    zIndex={10}
+                >
+                    <ThemeToggleButton />
+                </Box>
                 {children}
             </>
         </motion.article>
