@@ -25,6 +25,7 @@ const Authentication = () => {
   const font = "poppins"
 
   const navigate = useNavigate();
+
   const [keepLogin, setKeepLogin] = useState(false)
   const [login, setLogin] = useState(true)
   const [formData, setFormData] = useState({

@@ -1,4 +1,4 @@
-import { extendTheme } from "@chakra-ui/react"
+import { extendTheme, type ThemeConfig } from "@chakra-ui/react"
 import "@fontsource-variable/inter"
 import '@fontsource/poppins';
 
@@ -10,17 +10,17 @@ const colors = {
         400: "#D1D1D1"
     }
 }
-    
+
 const fonts = {
     inter: `'Inter Variable', sans-serif`,
     poppins: `'Poppins', sans-serif`,
 }
 
-const config = {
+const config: ThemeConfig = {
     initialColorMode: 'dark',
     useSystemColorMode: true
 }
 
-const theme = extendTheme({ config, fonts, colors})
+const theme = extendTheme({ config, fonts, colors })
 
 export default theme
