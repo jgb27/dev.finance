@@ -1,12 +1,17 @@
 import Home from '../screens/Home.tsx'
 import ForgotPassword from '../screens/ForgotPassword.tsx'
-import Authentication from '../screens/Authentication.tsx'
+import SignIn from '../screens/SignIn.tsx'
 import { createBrowserRouter } from 'react-router-dom'
+import SignUp from '../screens/SignUp.tsx'
 
 const router = createBrowserRouter([
     {
-        path: "/authentication",
-        element: <Authentication />
+        path: "/signin",
+        element: <SignIn />
+    },
+    {
+        path: "/signup",
+        element: <SignUp />
     },
     {
         path: "/home",
