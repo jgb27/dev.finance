@@ -28,7 +28,6 @@ const Authentication = () => {
   const navigate = useNavigate();
 
   const [keepLogin, setKeepLogin] = useState(false)
-  const [login, setLogin] = useState(true)
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -48,23 +47,13 @@ const Authentication = () => {
   };
 
   return (
-    <Layout title={login ? "Login" : "Register"}>
+    <Layout title="Sign In">
       <Container maxW='md' boxShadow={'lg'} padding={6} mt={22}>
         <Flex direction='column' gap={8}>
           <Title color="primary" font="4xl" fontFamily="poppins" />
           <FormControl >
             <Flex gap={8} justify='flex-start' direction='column'>
               <Flex gap={6} justify='flex-start' direction='column'>
-                {!login ?
-                  <FormInput
-                    type='text'
-                    name='name'
-                    font={font}
-                    formData={formData}
-                    onChange={handleInputChange}
-                  />
-                  : <></>
-                }
                 <FormInput
                   type='email'
                   name='email'
@@ -74,7 +63,7 @@ const Authentication = () => {
                 />
 
                 <FormInput
-                  login={login}
+                  login={true}
                   type='password'
                   name='password'
                   onChange={handleInputChange}
@@ -83,26 +72,18 @@ const Authentication = () => {
                 />
               </Flex>
               <Flex gap={4} direction='column'>
-                {
-                  login ?
-                    <Checkbox
-                      fontFamily={font}
-                      fontWeight={300}
-                      onChange={handleCheckLoggin}
-                    >
-                      Keep me signed in
-                    </Checkbox> :
-
-                    <Flex gap={1} >
-                      <Text fontFamily={font} color="text">By continuing, you agree to our</Text>
-                      <Link fontFamily={font} color="primary">terms of service.</Link>
-                    </Flex>
-                }
+                <Checkbox
+                  fontFamily={font}
+                  fontWeight={300}
+                  onChange={handleCheckLoggin}
+                >
+                  Keep me signed in
+                </Checkbox>
                 <ButtonSubmit
                   loadingText="Submitting"
                   bg='primary'
                   color='white'
-                  text={login ? "Login" : "Register"}
+                  text="Sign In"
                   onSubmit={() => navigate("/home")}
                 />
               </Flex>
@@ -113,7 +94,7 @@ const Authentication = () => {
                   icon={<FcGoogle size={24} />}
                   color="white"
                   bg="gray.400"
-                  text={login ? "Login with Google" : "Register with Google"}
+                  text="Sign in with Google"
                   onSubmit={() => console.log("Google Login")}
                 />
                 <ButtonSubmit
@@ -121,18 +102,11 @@ const Authentication = () => {
                   color="white"
                   bg="gray.500"
                   onSubmit={() => console.log("Github Login")}
-                  text={login ? "Login with Github" : "Register with Github"}
+                  text="Sign in with Github"
                 />
               </Flex>
               <Center>
-                {login ?
-                  <Link onClick={() => setLogin(!login)} color="primary">Create an account</Link>
-                  :
-                  <Flex direction="row" gap={1}>
-                    <Text>Already have an account?</Text>
-                    <Link onClick={() => setLogin(!login)} color="primary">Sign in here</Link>
-                  </Flex>
-                }
+                <Link onClick={() => navigate("/signup")} color="primary">Create an account</Link>
               </Center>
             </Flex>
           </FormControl >
