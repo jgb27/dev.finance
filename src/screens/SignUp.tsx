@@ -79,7 +79,7 @@ const SignUp = () => {
                   bg='primary'
                   color='white'
                   text="Sign Up"
-                  onSubmit={() => navigate("/home")}
+                  onSubmit={() => navigate("/overview")}
                 />
               </Flex>
 

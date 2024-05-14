@@ -84,7 +84,7 @@ const Authentication = () => {
                   bg='primary'
                   color='white'
                   text="Sign In"
-                  onSubmit={() => navigate("/home")}
+                  onSubmit={() => navigate("/overview")}
                 />
               </Flex>
 

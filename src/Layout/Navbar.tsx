@@ -27,7 +27,7 @@ const NavBar = ({ title }: NavBar) => {
     return (
         <VStack
             alignItems="center"
-            w="20vw"
+            w="16vw"
             h="100vh"
             bg="defaultBlack"
             justify={"space-between"}
