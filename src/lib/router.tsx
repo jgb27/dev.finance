@@ -6,6 +6,7 @@ import SignUp from '../screens/SignUp.tsx'
 import Transactions from '../screens/Transactions.tsx'
 import Bills from '../screens/Bills.tsx'
 import Expense from '../screens/Expense.tsx'
+import Balance from '../screens/Balance.tsx'
 
 const router = createBrowserRouter([
     {
@@ -27,6 +28,10 @@ const router = createBrowserRouter([
     {
         path: "/overview",
         element: <Overview />
+    },
+    {
+        path: "/balance",
+        element: <Balance />
     },
     {
         path: "/transactions",

@@ -1,7 +1,7 @@
-import { Box, Flex, VStack } from "@chakra-ui/react"
+import { Flex, VStack } from "@chakra-ui/react"
 import MenuItem from "../components/MenuItem"
 import Title from "../components/Title"
-import { MdOutlineDashboard, MdOutlineLogout, MdOutlineMoneyOff } from "react-icons/md";
+import { MdOutlineDashboard, MdOutlineLogout, MdOutlineMoneyOff, MdAccountBalanceWallet } from "react-icons/md";
 import { GrTransaction } from "react-icons/gr";
 import { TbReceiptDollar } from "react-icons/tb";
 
@@ -19,6 +19,7 @@ type MenuItemProps = {
 const NavBar = ({ title }: NavBar) => {
     const menuItensList = [
         { title: "Overview", icon: <MdOutlineDashboard fontSize={22} color="white" />, size: ['22', '20', '18'] },
+        { title: "Balance", icon: <MdAccountBalanceWallet fontSize={22} color="white" />, size: ['22', '20', '18'] },
         { title: "Transactions", icon: <GrTransaction fontSize={22} color="white" />, size: ['22', '20', '18'] },
         { title: "Expense", icon: <MdOutlineMoneyOff fontSize={22} color="white" />, size: ['22', '20', '18'] },
         { title: "Bills", icon: <TbReceiptDollar fontSize={22} color="white" />, size: ['22', '20', '18'] }
@@ -50,7 +51,7 @@ const NavBar = ({ title }: NavBar) => {
                     ))}
                 </VStack>
             </Flex>
-            <MenuItem select={false} title="Logout" icon={<MdOutlineLogout fontSize={22} color="white"/>} size={['22', '20', '18']} />
+            <MenuItem select={false} title="Logout" icon={<MdOutlineLogout fontSize={22} color="white" />} size={['22', '20', '18']} />
         </VStack>
     )
 }
