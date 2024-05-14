@@ -25,16 +25,11 @@ interface diviser {
 const SignUp = () => {
   const font = "poppins"
   const navigate = useNavigate();
-  const [keepLogin, setKeepLogin] = useState(false)
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     password: ""
   });
-
-  const handleCheckLoggin = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setKeepLogin(!keepLogin)
-  }
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
