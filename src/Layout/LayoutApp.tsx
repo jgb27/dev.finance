@@ -3,17 +3,20 @@ import Layout from "./Article"
 import NavBar from "./Navbar"
 
 interface ILayout {
-    children: React.ReactNode
-    title?: string
+    children?: React.ReactNode
+    title: string
 }
 
 const LayoutContainer = ({ children, title }: ILayout) => {
-    <Layout title={title}>
+
+    return (
         <Flex>
-            <NavBar />
-            {children}
+            <NavBar title={title}/>
+            <Layout title={title}>
+                {children}
+            </Layout>
         </Flex>
-    </Layout>
+    )
 }
 
 export default LayoutContainer;
