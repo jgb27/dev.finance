@@ -5,12 +5,13 @@ interface IButton {
     color: string,
     bg: string,
     text: string,
-    loadingText?: string
+    isLoading?: boolean,
+    loadingText?: string,
     onSubmit: () => void
 }
 
 
-const CButton = ({ icon, color, bg, text, loadingText, onSubmit }: IButton) => {
+const CButton = ({ icon, color, bg, text, isLoading, loadingText, onSubmit }: IButton) => {
     return (
         <Button
             leftIcon={icon}
@@ -18,7 +19,8 @@ const CButton = ({ icon, color, bg, text, loadingText, onSubmit }: IButton) => {
             color={color}
             onClick={onSubmit}
             w="full"
-            loadingText={loadingText}
+            isLoading={isLoading}
+            loadingText={isLoading ? loadingText : ""}
             _hover={{
                 opacity: 0.8,
             }}
