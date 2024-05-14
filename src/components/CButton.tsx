@@ -1,6 +1,6 @@
 import { Button } from "@chakra-ui/react";
 
-interface Button {
+interface IButton {
     icon?: React.ReactElement,
     color: string,
     bg: string,
@@ -10,7 +10,7 @@ interface Button {
 }
 
 
-const ButtonSubmit = ({ icon, color, bg, text, loadingText, onSubmit }: Button) => {
+const CButton = ({ icon, color, bg, text, loadingText, onSubmit }: IButton) => {
     return (
         <Button
             leftIcon={icon}
@@ -28,4 +28,4 @@ const ButtonSubmit = ({ icon, color, bg, text, loadingText, onSubmit }: Button) 
     )
 }
 
-export default ButtonSubmit
+export default CButton
