@@ -2,12 +2,12 @@ import { HStack, VStack, Text } from "@chakra-ui/react"
 
 interface title {
     color: string,
-    font: string,
+    fontSize: string,
     fontFamily: string
 }
 
 
-const Title = ({ color, font: fontSize, fontFamily }: title) => {
+const Title = ({ color, fontSize , fontFamily }: title) => {
     return (
         <VStack>
             <HStack gap={0} fontFamily={fontFamily}>
