@@ -50,7 +50,7 @@ const Authentication = () => {
     <Layout title="Sign In">
       <Container maxW='md' boxShadow={'lg'} padding={6} mt={22}>
         <Flex direction='column' gap={8}>
-          <Title color="primary" font="4xl" fontFamily="poppins" />
+          <Title color="primary" fontSize="4xl" fontFamily="poppins" />
           <FormControl >
             <Flex gap={8} justify='flex-start' direction='column'>
               <Flex gap={6} justify='flex-start' direction='column'>
