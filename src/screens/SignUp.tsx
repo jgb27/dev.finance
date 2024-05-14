@@ -4,7 +4,6 @@ import {
   Link,
   Flex,
   Text,
-  Checkbox,
   Center,
 } from "@chakra-ui/react"
 import Title from "../components/Title"
