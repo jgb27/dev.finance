@@ -1,7 +1,7 @@
 import { Container, Flex, FormControl, Text, useColorModeValue } from "@chakra-ui/react";
 import Title from "../components/Title";
 import FormInput from "../components/FormInput";
-import ButtonSubmit from "../components/ButtonSubmit";
+import Button from "../components/CButton";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import Layout from "../Layout/Article"
@@ -42,7 +42,7 @@ const ForgotPassword = () => {
                                     formData={formData}
                                 />
                                 <Flex justify='center' direction='column' gap={1}>
-                                    <ButtonSubmit
+                                    <Button
                                         bg="primary"
                                         color="white"
                                         text="Password Reset"
@@ -51,7 +51,7 @@ const ForgotPassword = () => {
                                             navigate('/authentication')
                                         }}
                                     />
-                                    <ButtonSubmit
+                                    <Button
                                         bg="white"
                                         color="newGray.200"
                                         text="Back to login"

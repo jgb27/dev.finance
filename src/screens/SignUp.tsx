@@ -10,7 +10,7 @@ import Title from "../components/Title"
 import { useState } from 'react'
 
 import Layout from "../Layout/Article"
-import ButtonSubmit from '../components/ButtonSubmit';
+import Button from '../components/CButton';
 import { FcGoogle } from 'react-icons/fc';
 import { FaGithub } from "react-icons/fa";
 import FormInput from '../components/FormInput';
@@ -74,7 +74,7 @@ const SignUp = () => {
                   <Text fontFamily={font} color="text">By continuing, you agree to our</Text>
                   <Link fontFamily={font} color="primary">terms of service.</Link>
                 </Flex>
-                <ButtonSubmit
+                <Button
                   loadingText="Submitting"
                   bg='primary'
                   color='white'
@@ -85,14 +85,14 @@ const SignUp = () => {
 
               <Diviser font={font} text='or sign in with' />
               <Flex direction="column" gap={2}>
-                <ButtonSubmit
+                <Button
                   icon={<FcGoogle size={24} />}
                   color="white"
                   bg="gray.400"
                   text="Sign up with Google"
                   onSubmit={() => console.log("Google Login")}
                 />
-                <ButtonSubmit
+                <Button
                   icon={<FaGithub size={24} />}
                   color="white"
                   bg="gray.500"
