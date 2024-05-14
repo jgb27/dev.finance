@@ -41,7 +41,7 @@ const Layout = ({ children, title }: LayoutProps) => {
                 )}
                 <Box
                     position="absolute"
-                    right={5}
+                    right={0}
                     zIndex={10}
                 >
                     <ThemeToggleButton />
