@@ -1,14 +1,12 @@
+
 import { extendTheme, type ThemeConfig } from "@chakra-ui/react"
 import "@fontsource-variable/inter"
 import '@fontsource/poppins';
 
 const colors = {
     primary: "#299D91",
-    text: "#191D23",
-    newGray: {
-        200: "#878787",
-        400: "#D1D1D1"
-    }
+    defaultBlack: "#191919",
+    specialGreen: "#4DAF6E",
 }
 
 const fonts = {

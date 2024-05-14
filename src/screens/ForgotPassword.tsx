@@ -24,7 +24,7 @@ const ForgotPassword = () => {
         <Layout title="Forgot Password">
             <Container maxW='md' boxShadow={'lg'} padding={12} mt={22}>
                 <Flex direction='column' gap={8}>
-                    <Title color="primary" font="4xl" fontFamily="poppins" />
+                    <Title color="primary" fontSize="4xl" fontFamily="poppins" />
                     <Flex gap={4} direction='column'>
                         <Text fontFamily="inter" fontSize="24px" fontWeight="600" align='center' color={useColorModeValue("text", "white")}>
                             Forgot Password
