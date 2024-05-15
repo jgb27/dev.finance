@@ -5,12 +5,12 @@ import {
   Flex,
   Text,
   Center,
+  Button
 } from "@chakra-ui/react"
 import Title from "../components/Title"
 import { useState } from 'react'
 
 import Layout from "../Layout/Article"
-import Button from '../components/CButton';
 import { FcGoogle } from 'react-icons/fc';
 import { FaGithub } from "react-icons/fa";
 import FormInput from '../components/FormInput';
@@ -78,27 +78,28 @@ const SignUp = () => {
                   loadingText="Submitting"
                   bg='primary'
                   color='white'
-                  text="Sign Up"
                   onSubmit={() => navigate("/overview")}
-                />
+                >
+                  Sign Up
+                </Button>
               </Flex>
 
               <Diviser font={font} text='or sign in with' />
               <Flex direction="column" gap={2}>
                 <Button
-                  icon={<FcGoogle size={24} />}
+                  leftIcon={<FcGoogle size={24} />}
                   color="white"
                   bg="gray.400"
-                  text="Sign up with Google"
                   onSubmit={() => console.log("Google Login")}
-                />
+                >Sign up with Google</Button>
                 <Button
-                  icon={<FaGithub size={24} />}
+                  leftIcon={<FaGithub size={24} />}
                   color="white"
                   bg="gray.500"
                   onSubmit={() => console.log("Github Login")}
-                  text="Sign up with Github"
-                />
+                >
+                  Sign up with Github
+                </Button>
               </Flex>
               <Center>
                 <Flex direction="row" gap={1}>

@@ -6,7 +6,6 @@ interface title {
     fontFamily: string
 }
 
-
 const Title = ({ color, fontSize , fontFamily }: title) => {
     return (
         <VStack>

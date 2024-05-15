@@ -6,12 +6,12 @@ import {
   Text,
   Checkbox,
   Center,
+  Button,
 } from "@chakra-ui/react"
 import Title from "../components/Title"
 import { useState } from 'react'
 
 import Layout from "../Layout/Article"
-import Button from '../components/CButton';
 import { FcGoogle } from 'react-icons/fc';
 import { FaGithub } from "react-icons/fa";
 import FormInput from '../components/FormInput';
@@ -83,27 +83,32 @@ const Authentication = () => {
                   loadingText="Submitting"
                   bg='primary'
                   color='white'
-                  text="Sign In"
+
                   onSubmit={() => navigate("/overview")}
-                />
+                >
+                  Sign In
+                </Button>
               </Flex>
 
               <Diviser font={font} text='or sign in with' />
               <Flex direction="column" gap={2}>
                 <Button
-                  icon={<FcGoogle size={24} />}
+                  leftIcon={<FcGoogle size={24} />}
                   color="white"
                   bg="gray.400"
-                  text="Sign in with Google"
                   onSubmit={() => console.log("Google Login")}
-                />
+                >
+                  Sign in with Google
+                </Button>
                 <Button
-                  icon={<FaGithub size={24} />}
+                  leftIcon={<FaGithub size={24} />}
                   color="white"
                   bg="gray.500"
                   onSubmit={() => console.log("Github Login")}
-                  text="Sign in with Github"
-                />
+
+                >
+                  Sign in with Github
+                </Button>
               </Flex>
               <Center>
                 <Link onClick={() => navigate("/signup")} color="primary">Create an account</Link>

@@ -1,4 +1,4 @@
-import { Box, Flex, Icon, Text } from "@chakra-ui/react";
+import { Flex, Icon, Text } from "@chakra-ui/react";
 import { FiChevronsRight } from "react-icons/fi";
 import { MdOutlineNotifications } from "react-icons/md";
 import SearchInput from "./SearchInput";

@@ -5,7 +5,6 @@ import { MdOutlineDashboard, MdOutlineLogout, MdOutlineMoneyOff, MdAccountBalanc
 import { GrTransaction } from "react-icons/gr";
 import { TbReceiptDollar } from "react-icons/tb";
 
-
 interface NavBar {
     title: string
 }

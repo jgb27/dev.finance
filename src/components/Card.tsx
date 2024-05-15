@@ -1,7 +1,6 @@
-import { Flex, Text } from "@chakra-ui/react"
+import { Button, Flex, Text } from "@chakra-ui/react"
 import { BsBank, BsPiggyBank } from "react-icons/bs";
 import { FaCreditCard } from "react-icons/fa";
-import Button from "./CButton";
 
 export interface CardAccountProps {
     title: string
@@ -157,26 +156,42 @@ const CardAccount = ({ title, subTitle, account, type }: CardAccountProps) => {
                 gap={4}
             >
                 <Button
-                    text="Remove"
                     color="primary"
                     bg="transparent"
-                    fontSize="12"
-                    width="40%"
+                    fontSize="16"
+                    width="22%"
+                    _hover={
+                        {
+                            transform: "scale(1.03)"
+                        }
+                    }
                     fontWeight={400}
                     justifyContent="start"
                     onSubmit={() => console.log("Edit")}
-                />
+                    borderRadius={5}
+                >
+                    Remove
+                </Button>
                 <Button
-                    text="Edit"
                     color="white"
                     bg="primary"
+                    opacity={0.8}
                     fontSize="16"
                     width="40%"
                     fontWeight={400}
                     onSubmit={() => console.log("Edit")}
-                />
+                    borderRadius={5}
+                    _hover={
+                        {
+                            opacity: 1,
+                            transform: "scale(1.03)"
+                        }
+                    }
+                >
+                    Edit
+                </Button>
             </Flex>
-        </Flex>
+        </Flex >
     )
 
 }

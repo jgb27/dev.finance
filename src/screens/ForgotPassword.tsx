@@ -1,7 +1,6 @@
-import { Container, Flex, FormControl, Text, useColorModeValue } from "@chakra-ui/react";
+import { Button, Container, Flex, FormControl, Text, useColorModeValue } from "@chakra-ui/react";
 import Title from "../components/Title";
 import FormInput from "../components/FormInput";
-import Button from "../components/CButton";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import Layout from "../Layout/Article"
@@ -45,18 +44,21 @@ const ForgotPassword = () => {
                                     <Button
                                         bg="primary"
                                         color="white"
-                                        text="Password Reset"
                                         onSubmit={() => {
                                             alert("Password reset link sent to your email")
                                             navigate('/authentication')
                                         }}
-                                    />
+                                    >
+                                        Password Reset
+                                    </Button>
                                     <Button
                                         bg="white"
                                         color="newGray.200"
-                                        text="Back to login"
+
                                         onSubmit={() => navigate('/authentication')}
-                                    />
+                                    >
+                                        Back to Login
+                                    </Button>
                                 </Flex>
                             </Flex>
                         </FormControl>
