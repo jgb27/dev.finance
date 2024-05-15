@@ -1,55 +1,27 @@
 import { Button, Flex, Grid, Text } from "@chakra-ui/react";
 import Layout from "../Layout/LayoutApp"
 import CardAccount, { CardAccountProps } from "../components/Card";
+import { useState } from "react";
+import { motion } from 'framer-motion'
+
+const variants = {
+    hidden: { opacity: 0, y: 20 },
+    enter: { opacity: 1, y: 0 },
+    exit: { opacity: 0, y: 20 }
+}
 
 const Balance = () => {
-    const accounts = [
-        {
-            title: "Visa",
-            subTitle: "Credit Card",
-            type: "card",
-            account: {
-                number: 8547854785478547,
-                totalAmount: 1300
-            }
-        },
-        {
-            title: "Master Card",
-            subTitle: "Credit Card",
-            type: "card",
-            account: {
-                number: 8547854785478547,
-                totalAmount: 4000
-            }
-        },
-        {
-            title: "Banestes",
-            subTitle: "Bank Account",
-            type: "bank",
-            account: {
-                number: 8547,
-                totalAmount: 1000
-            }
-        }, {
-            title: "Clear",
-            subTitle: "Investment",
-            type: "investment",
-            account: {
-                number: 8547,
-                totalAmount: 112000
-            }
-        }
-        , {
-            title: "Inter",
-            subTitle: "Bank Account",
-            type: "card",
-            account: {
-                number: 8547,
-                totalAmount: 103200
-            }
-        }
 
-    ] as CardAccountProps[]
+    const [accounts, setAccounts] = useState<CardAccountProps[]>([]);
+
+    const addNewAccount = (account: CardAccountProps) => {
+        setAccounts([...accounts, account]);
+    }
+
+    const removeAccount = (index: number) => {
+        const newAccounts = accounts.filter((account, i) => i !== index);
+        setAccounts(newAccounts);
+    }
 
     const Card = () => {
         return (
@@ -73,7 +45,17 @@ const Balance = () => {
                     border="none"
                     color="white"
                     borderRadius="10"
-                    onClick={() => { console.log("Add Account") }}
+                    onClick={() => {
+                        addNewAccount({
+                            title: "Inter",
+                            subTitle: "Bank Account",
+                            type: "card",
+                            account: {
+                                number: 8547,
+                                totalAmount: 103200
+                            }
+                        })
+                    }}
                 >
                     Add Account
                 </Button>
@@ -92,7 +74,6 @@ const Balance = () => {
             </Flex>
         )
     }
-
 
     return (
         <Layout title="Balance">
@@ -113,13 +94,21 @@ const Balance = () => {
             >
                 <Card />
                 {accounts.map((account, index) => (
-                    <CardAccount
+                    <motion.div
                         key={index}
-                        title={account.title}
-                        subTitle={account.subTitle}
-                        account={account.account}
-                        type={account.type}
-                    />
+                        initial="hidden"
+                        animate="enter"
+                        exit="exit"
+                        variants={variants}
+                        transition={{ duration: 0.4, type: 'easeInOut' }}
+                    >
+                        <CardAccount
+                            key={index}
+                            accountProps={account}
+                            removeAccount={() => removeAccount(index)}
+                        />
+                    </motion.div>
+
                 ))}
             </Grid>
         </Layout>

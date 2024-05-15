@@ -122,11 +122,11 @@ const Account = ({ account, type }: { type: string, account: { number: number, t
     )
 }
 
-const CardAccount = ({ title, subTitle, account, type }: CardAccountProps) => {
-    const t = title
-    const s = subTitle
-    const a = account
-    const ty = type
+const CardAccount = ({ accountProps, removeAccount }: { accountProps: CardAccountProps, removeAccount: () => void }) => {
+    const t = accountProps.title
+    const s = accountProps.subTitle
+    const a = accountProps.account
+    const ty = accountProps.type
 
     return (
         <Flex
@@ -169,6 +169,7 @@ const CardAccount = ({ title, subTitle, account, type }: CardAccountProps) => {
                     justifyContent="start"
                     onSubmit={() => console.log("Edit")}
                     borderRadius={5}
+                    onClick={() => removeAccount()}
                 >
                     Remove
                 </Button>
