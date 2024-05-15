@@ -1,6 +1,7 @@
 import { Flex, Text } from "@chakra-ui/react"
 import { BsBank, BsPiggyBank } from "react-icons/bs";
 import { FaCreditCard } from "react-icons/fa";
+import Button from "./CButton";
 
 export interface CardAccountProps {
     title: string
@@ -129,20 +130,51 @@ const CardAccount = ({ title, subTitle, account, type }: CardAccountProps) => {
     const ty = type
 
     return (
-        <Flex>
+        <Flex
+            bg="card"
+            borderRadius="10"
+            padding="15"
+            justify="space-between"
+            direction="column"
+            w="100%"
+            h="100%"
+            color="black"
+            fontFamily="inter"
+            shadow="md"
+            gap={4}
+        >
             <Flex
-                bg="#f6f6f6"
-                borderRadius="10"
-                padding="15"
                 direction="column"
-                justify="space-between"
-                w="100%"
-                h="100%"
-                color="black"
-                gap={4}
+                gap={3}
             >
                 <Title title={t} subTitle={s} type={ty} />
                 <Account account={a} type={ty} />
+            </Flex>
+
+            <Flex
+                direction="row"
+                justify="space-between"
+                gap={4}
+            >
+                <Button
+                    text="Remove"
+                    color="primary"
+                    bg="transparent"
+                    fontSize="12"
+                    width="40%"
+                    fontWeight={400}
+                    justifyContent="start"
+                    onSubmit={() => console.log("Edit")}
+                />
+                <Button
+                    text="Edit"
+                    color="white"
+                    bg="primary"
+                    fontSize="16"
+                    width="40%"
+                    fontWeight={400}
+                    onSubmit={() => console.log("Edit")}
+                />
             </Flex>
         </Flex>
     )

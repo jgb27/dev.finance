@@ -7,20 +7,29 @@ interface IButton {
     text: string,
     isLoading?: boolean,
     loadingText?: string,
+    fontSize?: string,
+    width?: string,
+    fontWeight?: string | number,
+    justifyContent?: string,
     onSubmit: () => void
 }
 
 
-const CButton = ({ icon, color, bg, text, isLoading, loadingText, onSubmit }: IButton) => {
+const CButton = ({ fontWeight, justifyContent, icon, width, color, bg, text, fontSize, isLoading, loadingText, onSubmit }: IButton) => {
     return (
         <Button
             leftIcon={icon}
+            justifyContent={justifyContent || "center"}
             bg={bg}
             color={color}
+            fontWeight={fontWeight || "normal"}
             onClick={onSubmit}
-            w="full"
+            fontSize={fontSize || "md"}
+            w={width || "full"}
+            alignItems={"center"}
             isLoading={isLoading}
             loadingText={isLoading ? loadingText : ""}
+            letterSpacing={0.5}
             _hover={{
                 opacity: 0.8,
             }}

@@ -1,10 +1,8 @@
-import { Text } from "@chakra-ui/react";
+import { Button, Flex, Grid, Text } from "@chakra-ui/react";
 import Layout from "../Layout/LayoutApp"
-import GridCards from "../Layout/GridCards";
-import { CardAccountProps } from "../components/Card";
+import CardAccount, { CardAccountProps } from "../components/Card";
 
 const Balance = () => {
-
     const accounts = [
         {
             title: "Visa",
@@ -53,6 +51,49 @@ const Balance = () => {
 
     ] as CardAccountProps[]
 
+    const Card = () => {
+        return (
+            <Flex
+                bg="transparent"
+                borderRadius="10"
+                padding="15"
+                justify="center"
+                direction="column"
+                w="100%"
+                h="100%"
+                color="black"
+                fontFamily="inter"
+                gap={4}
+            >
+                <Button
+                    bg="primary"
+                    fontFamily="inter"
+                    fontWeight={600}
+                    variant="solid"
+                    border="none"
+                    color="white"
+                    borderRadius="10"
+                    onClick={() => { console.log("Add Account") }}
+                >
+                    Add Account
+                </Button>
+                <Button
+                    bg="transparent"
+                    color="primary"
+                    fontFamily="inter"
+                    fontWeight={600}
+                    variant="outline"
+                    border="none"
+                    borderRadius="10"
+                    onClick={() => { console.log("Edit Account") }}
+                >
+                    Edit Accounts
+                </Button>
+            </Flex>
+        )
+    }
+
+
     return (
         <Layout title="Balance">
             <Text
@@ -60,10 +101,27 @@ const Balance = () => {
                 fontSize="20"
                 fontFamily="inter"
                 letterSpacing={1}
+                fontWeight={600}
+                padding={4}
             >
                 Balance
             </Text>
-            <GridCards accounts={accounts} />
+            <Grid
+                templateColumns="repeat(3, 1fr)"
+                gap={6}
+                padding={6}
+            >
+                <Card />
+                {accounts.map((account, index) => (
+                    <CardAccount
+                        key={index}
+                        title={account.title}
+                        subTitle={account.subTitle}
+                        account={account.account}
+                        type={account.type}
+                    />
+                ))}
+            </Grid>
         </Layout>
     );
 };
