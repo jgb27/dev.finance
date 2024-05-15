@@ -83,8 +83,7 @@ const Authentication = () => {
                   loadingText="Submitting"
                   bg='primary'
                   color='white'
-
-                  onSubmit={() => navigate("/overview")}
+                  onClick={() => navigate("/overview")}
                 >
                   Sign In
                 </Button>
@@ -96,7 +95,7 @@ const Authentication = () => {
                   leftIcon={<FcGoogle size={24} />}
                   color="white"
                   bg="gray.400"
-                  onSubmit={() => console.log("Google Login")}
+                  onClick={() => console.log("Google Login")}
                 >
                   Sign in with Google
                 </Button>
@@ -104,8 +103,7 @@ const Authentication = () => {
                   leftIcon={<FaGithub size={24} />}
                   color="white"
                   bg="gray.500"
-                  onSubmit={() => console.log("Github Login")}
-
+                  onClick={() => console.log("Github Login")}
                 >
                   Sign in with Github
                 </Button>
