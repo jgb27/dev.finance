@@ -7,42 +7,47 @@ const Balance = () => {
 
     const accounts = [
         {
-            title: "Account",
-            subTitle: "Account number",
+            title: "Visa",
+            subTitle: "Credit Card",
+            type: "card",
             account: {
-                number: 854785478854788547,
-                totalAmount: 1000
+                number: 8547854785478547,
+                totalAmount: 1300
             }
         },
         {
-            title: "Account",
-            subTitle: "Account number",
+            title: "Master Card",
+            subTitle: "Credit Card",
+            type: "card",
             account: {
-                number: 854785478854788547,
-                totalAmount: 1000
+                number: 8547854785478547,
+                totalAmount: 4000
             }
         },
         {
-            title: "Account",
-            subTitle: "Account number",
+            title: "Banestes",
+            subTitle: "Bank Account",
+            type: "bank",
             account: {
-                number: 854785478854788547,
+                number: 8547,
                 totalAmount: 1000
             }
         }, {
-            title: "Account",
-            subTitle: "Account number",
+            title: "Clear",
+            subTitle: "Investment",
+            type: "investment",
             account: {
-                number: 854785478854788547,
-                totalAmount: 1000
+                number: 8547,
+                totalAmount: 112000
             }
         }
         , {
-            title: "Account",
-            subTitle: "Account number",
+            title: "Inter",
+            subTitle: "Bank Account",
+            type: "card",
             account: {
-                number: 854785478854788547,
-                totalAmount: 1000
+                number: 8547,
+                totalAmount: 103200
             }
         }
 
