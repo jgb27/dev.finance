@@ -13,7 +13,7 @@ const Header = ({ user }: IHeader) => {
             w="84vw"
             padding="5"
             justify="space-between"
-            bg="gray05"
+            bg="bgHeader"
         >
             <Flex
                 justify="start"
@@ -23,7 +23,7 @@ const Header = ({ user }: IHeader) => {
                     fontFamily="inter"
                     fontWeight="bold"
                     fontSize={24}
-                    color="defaultBlack"
+                    color="primary"
                 >
                     Hello {user}
                 </Text>
@@ -58,7 +58,7 @@ const Header = ({ user }: IHeader) => {
                 <Icon
                     as={MdOutlineNotifications}
                     fontSize={26}
-                    color="gray03"
+                    color="subText"
                 />
                 <SearchInput />
             </Flex>

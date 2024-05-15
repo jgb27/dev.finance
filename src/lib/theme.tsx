@@ -17,6 +17,10 @@ const theme = extendTheme({
             primary: "#299D91",
             secondary: "#525256",
             subText: "#A0A0A0",
+            bgHeader: {
+                _light: "whiteAlpha.50",
+                _dark: "blackAlpha.200"
+            },
             card: {
                 _light: "blackAlpha.200",
                 _dark: "whiteAlpha.800"

@@ -5,9 +5,9 @@ const SearchInput = () => {
 
     return (
         <InputGroup >
-            <Input paddingEnd={24} type='search' placeholder='Search here' color="gray03" fontSize="14" />
+            <Input paddingEnd={24} type='search' placeholder='Search here' color="subText" fontSize="14" />
             <InputRightElement pointerEvents='none'>
-                <SearchIcon color='secondary' />
+                <SearchIcon color='subText' />
             </InputRightElement>
         </InputGroup >
     );
