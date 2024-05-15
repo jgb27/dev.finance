@@ -18,6 +18,7 @@ const GridCards = ({ accounts }: GridCardsProps) => {
                     title={account.title}
                     subTitle={account.subTitle}
                     account={account.account}
+                    type={account.type}
                 />
             ))}
         </Grid>
