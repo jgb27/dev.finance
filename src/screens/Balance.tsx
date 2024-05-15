@@ -1,25 +1,30 @@
 import { Button, Flex, Grid, Text } from "@chakra-ui/react";
 import Layout from "../Layout/LayoutApp"
 import CardAccount, { CardAccountProps } from "../components/Card";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { motion } from 'framer-motion'
 
 const variants = {
-    hidden: { opacity: 0, y: 20 },
-    enter: { opacity: 1, y: 0 },
-    exit: { opacity: 0, y: 20 }
+    hidden: { opacity: 0, scale: 0.5 },
+    enter: { opacity: 1, scale: 1, transition: { duration: 0.5 } },
+    exit: { opacity: 0, scale: 0, transition: { duration: 0.5 } }
 }
 
 const Balance = () => {
+    const [accounts, setAccounts] = useState<CardAccountProps[]>(JSON.parse(localStorage.getItem("accounts") || "[]") as CardAccountProps[])
 
-    const [accounts, setAccounts] = useState<CardAccountProps[]>([]);
+    useEffect(() => {
+        setAccounts(JSON.parse(localStorage.getItem("accounts") || "[]") as CardAccountProps[]);
+    }, [localStorage.getItem("accounts")]);
 
     const addNewAccount = (account: CardAccountProps) => {
+        localStorage.setItem("accounts", JSON.stringify([...accounts, account]));
         setAccounts([...accounts, account]);
     }
 
     const removeAccount = (index: number) => {
-        const newAccounts = accounts.filter((account, i) => i !== index);
+        const newAccounts = accounts.filter((_account, i) => i !== index);
+        localStorage.setItem("accounts", JSON.stringify(newAccounts));
         setAccounts(newAccounts);
     }
 
@@ -94,21 +99,21 @@ const Balance = () => {
             >
                 <Card />
                 {accounts.map((account, index) => (
+
                     <motion.div
-                        key={index}
                         initial="hidden"
                         animate="enter"
                         exit="exit"
                         variants={variants}
-                        transition={{ duration: 0.4, type: 'easeInOut' }}
+                        transition={{ duration: 0.8, type: 'easeInOut', delay: 0.2 }}
                     >
+
                         <CardAccount
                             key={index}
                             accountProps={account}
                             removeAccount={() => removeAccount(index)}
                         />
                     </motion.div>
-
                 ))}
             </Grid>
         </Layout>
